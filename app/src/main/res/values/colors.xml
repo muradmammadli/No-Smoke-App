@@ -7,4 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="orange">#C62400</color>
+    <color name="rausch">#FF5A5F</color>
+    <color name="rausch100">#FF898D</color>
+    <color name="hof">#484848</color>
+    <color name="foggy">#767676</color>
 </resources>
