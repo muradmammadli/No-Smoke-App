@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav"
+    app:startDestination="@id/progressFragment">
+
+    <fragment
+        android:id="@+id/progressFragment"
+        android:name="com.example.nosmokeapp.ProgressFragment"
+        android:label="fragment_progress"
+        tools:layout="@layout/fragment_progress" />
+    <fragment
+        android:id="@+id/healthFragment"
+        android:name="com.example.nosmokeapp.HealthFragment"
+        android:label="fragment_health"
+        tools:layout="@layout/fragment_health" />
+    <fragment
+        android:id="@+id/trophiesFragment"
+        android:name="com.example.nosmokeapp.TrophiesFragment"
+        android:label="fragment_trophies"
+        tools:layout="@layout/fragment_trophies" />
+</navigation>
