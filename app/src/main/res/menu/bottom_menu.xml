@@ -2,13 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/trophiesFragment"
-        android:title="Kuboklar"/>
+        android:title="Kuboklar"
+        android:icon="@drawable/trophy_svgrepo_com"/>
 
     <item android:id="@+id/progressFragment"
-        android:title="Irəliəyiş"/>
+        android:title="Irəliəyiş"
+        android:icon="@drawable/progress_report_svgrepo_com"/>
 
     <item android:id="@+id/healthFragment"
-        android:title="Sağlamlıq"/>
+        android:title="Sağlamlıq"
+        android:icon="@drawable/ic_health"/>
 
 
 </menu>

@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/progressFragment"
-        android:name="com.example.nosmokeapp.ProgressFragment"
+        android:name="com.example.nosmokeapp.fragment.ProgressFragment"
         android:label="fragment_progress"
         tools:layout="@layout/fragment_progress" />
     <fragment
         android:id="@+id/healthFragment"
-        android:name="com.example.nosmokeapp.HealthFragment"
+        android:name="com.example.nosmokeapp.fragment.HealthFragment"
         android:label="fragment_health"
         tools:layout="@layout/fragment_health" />
     <fragment
         android:id="@+id/trophiesFragment"
-        android:name="com.example.nosmokeapp.TrophiesFragment"
+        android:name="com.example.nosmokeapp.fragment.TrophiesFragment"
         android:label="fragment_trophies"
         tools:layout="@layout/fragment_trophies" />
 </navigation>
