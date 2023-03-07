@@ -3,20 +3,20 @@
     <item>
         <shape
             android:shape="ring"
-            android:thicknessRatio="16"
+            android:thicknessRatio="10"
             android:useLevel="false">
             <solid android:color="@color/light_gray" />
         </shape>
     </item>
     <item>
         <rotate
-            android:fromDegrees="270"
-            android:toDegrees="270">
+            android:fromDegrees="135"
+            android:toDegrees="135">
             <shape
                 android:shape="ring"
-                android:thicknessRatio="16"
+                android:thicknessRatio="10"
                 android:useLevel="true">
-                <solid android:color="@color/foggy" />
+                <solid android:color="@color/rausch" />
             </shape>
         </rotate>
 

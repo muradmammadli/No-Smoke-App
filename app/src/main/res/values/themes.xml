@@ -16,7 +16,7 @@
     
     <style name="Theme.AppSplashScreen" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/rausch</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_smoke</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/baseline_smoke_free_24</item>
         <item name="postSplashScreenTheme">@style/Theme.NoSmokeApp</item>
     </style>
 </resources>

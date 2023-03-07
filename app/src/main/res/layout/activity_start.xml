@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Tarix seçin"
-            android:textColor="@color/hof"
+            android:textColor="@color/white"
             android:textSize="@dimen/_15ssp" />
     </androidx.cardview.widget.CardView>
 

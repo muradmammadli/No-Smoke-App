@@ -15,25 +15,10 @@ class ProgressFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        var progress = 0
+        var progress = 50
         binding = FragmentProgressBinding.inflate(inflater,container,false)
 
         binding.dayProgressBar.progress = progress
-
-
-        binding.button2.setOnClickListener {
-            if (progress <= 90){
-                progress += 10
-                binding.dayProgressBar.progress = progress
-            }
-        }
-
-        binding.button.setOnClickListener {
-            if (progress >= 10){
-                progress -= 10
-                binding.dayProgressBar.progress = progress
-            }
-        }
 
 
         return binding.root

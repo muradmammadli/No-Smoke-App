@@ -18,10 +18,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
         setNavHostFragment()
-
-
+        setContentView(binding.root)
     }
 
     private fun setNavHostFragment() {
@@ -30,7 +28,6 @@ class MainActivity : AppCompatActivity() {
         val navhostFragment =
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         val navController = navhostFragment.navController
-        binding.bottomNavigationView.setupWithNavController(navController)
         binding.bottomNavigationView.setOnItemSelectedListener { item->
             when(item.itemId){
                 R.id.trophiesFragment->{
@@ -48,7 +45,7 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
-
+        binding.bottomNavigationView.setupWithNavController(navController)
     }
 
 
