@@ -4,13 +4,16 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.ViewModelProvider
 import com.example.nosmokeapp.ViewModel.StartViewModel
 import com.example.nosmokeapp.databinding.ActivityStartBinding
+import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.*
 
+@AndroidEntryPoint
 class StartActivity : AppCompatActivity() {
     private lateinit var binding: ActivityStartBinding
     private lateinit var viewModel: StartViewModel
@@ -27,6 +30,7 @@ class StartActivity : AppCompatActivity() {
         setDayCigar()
         setPackCigar()
         setYearCigar()
+        Log.d("dddddd", "${viewModel.getTime()}")
     }
 
     private fun createDialog() {
@@ -63,54 +67,56 @@ class StartActivity : AppCompatActivity() {
 
     private fun setDayCigar() {
         var dayCiga = 20
+        viewModel.setCigaCountPref(dayCiga)
         binding.apply {
             cigaDayEditText.setText(dayCiga.toString())
             imgAdd.setOnClickListener {
                 dayCiga++
-//                viewModel.setNumber(dayCiga)
+                viewModel.setCigaCountPref(dayCiga)
                 cigaDayEditText.setText(dayCiga.toString())
             }
             imgRemove.setOnClickListener {
                 dayCiga--
-//                viewModel.setNumber(dayCiga)
+                viewModel.setCigaCountPref(dayCiga)
                 cigaDayEditText.setText(dayCiga.toString())
             }
-
         }
 
     }
 
     private fun setPackCigar() {
-        var dayCiga = 20
+        var packCiga = 20
+        viewModel.setPackCigaCountPref(packCiga)
         binding.apply {
-            cigaPackEditText.setText(dayCiga.toString())
+            cigaPackEditText.setText(packCiga.toString())
             imgAddPack.setOnClickListener {
-                dayCiga++
-//                viewModel.setNumber(dayCiga)
-                cigaPackEditText.setText(dayCiga.toString())
+                packCiga++
+                viewModel.setPackCigaCountPref(packCiga)
+                cigaPackEditText.setText(packCiga.toString())
             }
             imgRemovePack.setOnClickListener {
-                dayCiga--
-//                viewModel.setNumber(dayCiga)
-                cigaPackEditText.setText(dayCiga.toString())
+                packCiga--
+                viewModel.setPackCigaCountPref(packCiga)
+                cigaPackEditText.setText(packCiga.toString())
             }
         }
 
     }
 
     private fun setYearCigar() {
-        var dayCiga = 1
+        var yearCiga = 1
+        viewModel.setTimePref(yearCiga)
         binding.apply {
-            cigaYearEditText.setText(dayCiga.toString())
+            cigaYearEditText.setText(yearCiga.toString())
             imgAddYear.setOnClickListener {
-                dayCiga++
-//                viewModel.setNumber(dayCiga)
-                cigaYearEditText.setText(dayCiga.toString())
+                yearCiga++
+                viewModel.setTimePref(yearCiga)
+                cigaYearEditText.setText(yearCiga.toString())
             }
             imgRemoveYear.setOnClickListener {
-                dayCiga--
-//                viewModel.setNumber(dayCiga)
-                cigaYearEditText.setText(dayCiga.toString())
+                yearCiga--
+                viewModel.setTimePref(yearCiga)
+                cigaYearEditText.setText(yearCiga.toString())
             }
         }
 

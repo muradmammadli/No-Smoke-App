@@ -7,8 +7,19 @@ interface PrefRepository {
     fun String.put(string: String)
     fun String.put(boolean: Boolean)
 
-    fun String.getLong()
-    fun String.getInt()
-    fun String.getString()
-    fun String.getBoolean()
+    fun String.getLong(): Long
+    fun String.getInt(): Int
+    fun String.getString(): String?
+    fun String.getBoolean(): Boolean
+
+    fun setTimeStampPreference(int: Int)
+    fun setCigaCountPreference(int: Int)
+    fun setPackCigaCountPreference(int: Int)
+    fun setTimePreference(int: Int)
+
+
+    fun getTimeStampPreference():Int
+    fun getCigaCountPreference():Int
+    fun getPackCigaCountPreference():Int
+    fun getTimePreference():Int
 }

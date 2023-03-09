@@ -2,5 +2,8 @@ package com.example.nosmokeapp.data
 
 object Constants {
     const val TIME_PREFERENCE = "TIMEPREFERENCE"
+    const val TIME_STAMP_PREFERENCE = "TIMESTAMPPREFERENCE"
+    const val CIGA_COUNT_PREFERENCE = "CIGACOUNTPREFERENCE"
+    const val PACK_CIGA_COUNT_PREFERENCE = "PACKCIGACOUNTPREFERENCE"
 
 }
