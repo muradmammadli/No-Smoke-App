@@ -45,8 +45,8 @@ class PrefRepositoryImpl(context: Context) : PrefRepository {
     override fun String.getBoolean() = pref.getBoolean(this, false)
 
 
-    override fun setTimeStampPreference(int: Int) {
-        TIME_STAMP_PREFERENCE.put(int)
+    override fun setTimeStampPreference(long: Long) {
+        TIME_STAMP_PREFERENCE.put(long)
     }
 
     override fun setCigaCountPreference(int: Int) {
@@ -62,8 +62,8 @@ class PrefRepositoryImpl(context: Context) : PrefRepository {
     }
 
 
-    override fun getTimeStampPreference(): Int {
-       return TIME_STAMP_PREFERENCE.getInt()
+    override fun getTimeStampPreference(): Long {
+       return TIME_STAMP_PREFERENCE.getLong()
     }
 
     override fun getCigaCountPreference(): Int {

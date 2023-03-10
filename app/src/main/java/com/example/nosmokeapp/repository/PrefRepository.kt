@@ -12,13 +12,13 @@ interface PrefRepository {
     fun String.getString(): String?
     fun String.getBoolean(): Boolean
 
-    fun setTimeStampPreference(int: Int)
+    fun setTimeStampPreference(long: Long)
     fun setCigaCountPreference(int: Int)
     fun setPackCigaCountPreference(int: Int)
     fun setTimePreference(int: Int)
 
 
-    fun getTimeStampPreference():Int
+    fun getTimeStampPreference():Long
     fun getCigaCountPreference():Int
     fun getPackCigaCountPreference():Int
     fun getTimePreference():Int

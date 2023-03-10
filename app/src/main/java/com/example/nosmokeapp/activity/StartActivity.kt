@@ -20,17 +20,16 @@ class StartActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Thread.sleep(2000)
+        Thread.sleep(1000)
         installSplashScreen()
         binding = ActivityStartBinding.inflate(layoutInflater)
+        viewModel = ViewModelProvider(this)[StartViewModel::class.java]
         setContentView(binding.root)
         onClickFabBtn()
         createDialog()
-        viewModel = ViewModelProvider(this)[StartViewModel::class.java]
         setDayCigar()
         setPackCigar()
         setYearCigar()
-        Log.d("dddddd", "${viewModel.getTime()}")
     }
 
     private fun createDialog() {
@@ -40,6 +39,8 @@ class StartActivity : AppCompatActivity() {
             myCalendar.set(Calendar.MONTH, month)
             myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
             updateLabel(myCalendar)
+            val timeStamp = myCalendar.timeInMillis
+            viewModel.setTimeStampPref(timeStamp)
         }
         binding.datePickerDialog.setOnClickListener {
             DatePickerDialog(
