@@ -61,8 +61,18 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
 
+
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Siqaretdən azadsınız"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/_10sdp"/>
 
             </RelativeLayout>
 
@@ -104,6 +114,7 @@
                                 app:tint="@color/hof" />
 
                             <TextView
+                                android:id="@+id/freeCigarHours"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="1g 19s 2d"
@@ -136,6 +147,7 @@
                                 app:tint="@color/hof" />
 
                             <TextView
+                                android:id="@+id/price_txt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="12 AZN"

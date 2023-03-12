@@ -34,8 +34,8 @@ class StartViewModel @Inject constructor(
         prefRepository.setPackCigaCountPreference(int)
     }
 
-    fun getTime(): Int {
-        return prefRepository.getTimePreference()
+    fun setPackPricePref(double: Double){
+        prefRepository.setPackPricePreference(double)
     }
 
 }

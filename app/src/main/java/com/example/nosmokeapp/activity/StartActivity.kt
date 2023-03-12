@@ -27,13 +27,12 @@ class StartActivity : AppCompatActivity() {
         setContentView(binding.root)
         onClickFabBtn()
         createDialog()
-        setDayCigar()
-        setPackCigar()
-        setYearCigar()
     }
 
     private fun createDialog() {
         val myCalendar = Calendar.getInstance()
+        updateLabel(myCalendar)
+        viewModel.setTimeStampPref(myCalendar.timeInMillis)
         val datePicker = DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
             myCalendar.set(Calendar.YEAR, year)
             myCalendar.set(Calendar.MONTH, month)
@@ -62,13 +61,19 @@ class StartActivity : AppCompatActivity() {
     private fun onClickFabBtn() {
         binding.doneFab.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
+            setDayCigar()
+            setPackCigar()
+            setYearCigar()
+            setPackPrice()
             finish()
         }
     }
 
     private fun setDayCigar() {
-        var dayCiga = 20
-        viewModel.setCigaCountPref(dayCiga)
+        var dayCiga = binding.cigaDayEditText.text.toString().toInt()
+        if (dayCiga != 0){
+            viewModel.setCigaCountPref(dayCiga)
+        }
         binding.apply {
             cigaDayEditText.setText(dayCiga.toString())
             imgAdd.setOnClickListener {
@@ -86,8 +91,9 @@ class StartActivity : AppCompatActivity() {
     }
 
     private fun setPackCigar() {
-        var packCiga = 20
-        viewModel.setPackCigaCountPref(packCiga)
+        var packCiga = binding.cigaPackEditText.text.toString().toInt()
+        if (packCiga != 0){viewModel.setPackCigaCountPref(packCiga)}
+
         binding.apply {
             cigaPackEditText.setText(packCiga.toString())
             imgAddPack.setOnClickListener {
@@ -105,8 +111,10 @@ class StartActivity : AppCompatActivity() {
     }
 
     private fun setYearCigar() {
-        var yearCiga = 1
-        viewModel.setTimePref(yearCiga)
+        var yearCiga = binding.cigaYearEditText.text.toString().toInt()
+        if (yearCiga != 0){
+            viewModel.setTimePref(yearCiga)
+        }
         binding.apply {
             cigaYearEditText.setText(yearCiga.toString())
             imgAddYear.setOnClickListener {
@@ -120,6 +128,15 @@ class StartActivity : AppCompatActivity() {
                 cigaYearEditText.setText(yearCiga.toString())
             }
         }
+    }
+
+    private fun setPackPrice(){
+        var pricePack = binding.cigaPriceEditText.text.toString().toDouble()
+        if (pricePack != 0.0){
+            viewModel.setPackPricePref(pricePack)
+        }
 
     }
+
+
 }

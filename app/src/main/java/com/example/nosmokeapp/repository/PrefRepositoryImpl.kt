@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import com.example.nosmokeapp.data.Constants.CIGA_COUNT_PREFERENCE
 import com.example.nosmokeapp.data.Constants.PACK_CIGA_COUNT_PREFERENCE
+import com.example.nosmokeapp.data.Constants.PACK_PRICE_PREFERENCE
 import com.example.nosmokeapp.data.Constants.TIME_PREFERENCE
 import com.example.nosmokeapp.data.Constants.TIME_STAMP_PREFERENCE
 import com.google.gson.Gson
@@ -35,6 +36,11 @@ class PrefRepositoryImpl(context: Context) : PrefRepository {
         editor.commit()
     }
 
+    override fun String.put(double: Double) {
+        editor.putLong(this, java.lang.Double.doubleToRawLongBits(double))
+        editor.commit()
+    }
+
     override fun String.getLong() = pref.getLong(this, 0)
 
 
@@ -43,6 +49,15 @@ class PrefRepositoryImpl(context: Context) : PrefRepository {
     override fun String.getString() = pref.getString(this, "")
 
     override fun String.getBoolean() = pref.getBoolean(this, false)
+
+    override fun String.getDouble(): Double {
+        return java.lang.Double.longBitsToDouble(
+            pref.getLong(
+                this,
+                java.lang.Double.doubleToRawLongBits(0.0)
+            )
+        )
+    }
 
 
     override fun setTimeStampPreference(long: Long) {
@@ -61,9 +76,13 @@ class PrefRepositoryImpl(context: Context) : PrefRepository {
         TIME_PREFERENCE.put(int)
     }
 
+    override fun setPackPricePreference(double: Double) {
+        PACK_PRICE_PREFERENCE.put(double)
+    }
+
 
     override fun getTimeStampPreference(): Long {
-       return TIME_STAMP_PREFERENCE.getLong()
+        return TIME_STAMP_PREFERENCE.getLong()
     }
 
     override fun getCigaCountPreference(): Int {
@@ -76,6 +95,10 @@ class PrefRepositoryImpl(context: Context) : PrefRepository {
 
     override fun getTimePreference(): Int {
         return TIME_PREFERENCE.getInt()
+    }
+
+    override fun getPackPricePreference(): Double {
+        return PACK_PRICE_PREFERENCE.getDouble()
     }
 
 

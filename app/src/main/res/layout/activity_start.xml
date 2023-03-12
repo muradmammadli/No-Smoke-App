@@ -238,6 +238,7 @@
                 android:inputType="number"
                 android:backgroundTint="@android:color/transparent"
                 android:hint="Bir paket siqaretin qiyməti"
+                android:text="3.0"
                 android:singleLine="true" />
 
         </com.google.android.material.textfield.TextInputLayout>

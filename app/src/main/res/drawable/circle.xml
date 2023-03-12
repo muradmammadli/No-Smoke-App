@@ -10,8 +10,8 @@
     </item>
     <item>
         <rotate
-            android:fromDegrees="135"
-            android:toDegrees="135">
+            android:fromDegrees="180"
+            android:toDegrees="180">
             <shape
                 android:shape="ring"
                 android:thicknessRatio="10"

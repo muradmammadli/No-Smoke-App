@@ -27,33 +27,32 @@ class ProgressFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentProgressBinding.inflate(inflater, container, false)
+        setProgress()
+        return binding.root
+    }
 
+    private fun setProgress() {
         val currentTime = Calendar.getInstance().timeInMillis
         val choosenTime = repository.getTimeStampPreference()
         val diffTime = currentTime - choosenTime
-
         val days = TimeUnit.MILLISECONDS.toDays(diffTime)
-        Log.d("diffTime", "$days")
-
-
+        val hours = TimeUnit.MILLISECONDS.toHours(diffTime)
+        val price = repository.getPackPricePreference()
+        Log.d("price", "$price")
+        val totalPrice = days * price
         binding.apply {
+            freeCigarHours.text = "$hours saat"
+            priceTxt.text = "${totalPrice} AZN"
             if (days < 7) {
-                dayProgressBar.progress = 100
-                progressAmount.text = "100 %"
+                dayProgressBar.progress = 0
+                progressAmount.text = "0 %"
             } else {
-                val progress = 100 - (days * 2)
+                val progress = days * 2
                 dayProgressBar.progress = progress.toInt()
                 progressAmount.text = "$progress %"
             }
         }
-
-
-
-
-
-
-
-
-        return binding.root
     }
+
+
 }
