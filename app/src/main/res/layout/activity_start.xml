@@ -66,10 +66,11 @@
                 android:id="@+id/cigaDayEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="number"
                 android:backgroundTint="@android:color/transparent"
                 android:hint="Gündəlik çəkdiyiniz siqaret"
-                android:singleLine="true" />
+                android:inputType="number"
+                android:singleLine="true"
+                android:text="20" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -123,10 +124,11 @@
                 android:id="@+id/cigaPackEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="number"
                 android:backgroundTint="@android:color/transparent"
                 android:hint="Bir paketdə olan siqaret sayı"
-                android:singleLine="true" />
+                android:inputType="number"
+                android:singleLine="true"
+                android:text="20" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -180,10 +182,11 @@
                 android:id="@+id/cigaYearEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="number"
                 android:backgroundTint="@android:color/transparent"
                 android:hint="Siqaret çəkdiyiniz müddət"
-                android:singleLine="true" />
+                android:inputType="number"
+                android:singleLine="true"
+                android:text="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -216,11 +219,11 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_20sdp"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
-        tools:layout_editor_absoluteX="30dp">
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout4"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/cigapPiceEditTextLayout"
@@ -235,10 +238,9 @@
                 android:id="@+id/cigaPriceEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="number"
                 android:backgroundTint="@android:color/transparent"
                 android:hint="Bir paket siqaretin qiyməti"
-                android:text="3.0"
+                android:inputType="number"
                 android:singleLine="true" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -253,9 +255,9 @@
         android:layout_marginRight="@dimen/_20sdp"
         android:layout_marginBottom="@dimen/_20sdp"
         android:backgroundTint="@color/rausch"
-        app:tint="@color/white"
         android:src="@drawable/ic_done"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/white" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

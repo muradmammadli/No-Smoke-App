@@ -27,7 +27,10 @@
                     android:id="@+id/progress_day"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
                     android:text="Gün 1"
                     android:textColor="@color/hof" />
 
@@ -187,6 +190,7 @@
                                 app:tint="@color/hof" />
 
                             <TextView
+                                android:id="@+id/spend_time"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="8s 2d"
@@ -217,15 +221,20 @@
                                 app:tint="@color/hof" />
 
                             <TextView
+                                android:id="@+id/total_cigars"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="1g 19s 2d"
                                 android:textColor="@color/rausch" />
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:id="@+id/total_cigars_txt"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Tütündən azad" />
+                                android:singleLine="true"
+                                android:ellipsize="marquee"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:text="Çəkmədiyiniz siqaretlərin sayı" />
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
                 </LinearLayout>

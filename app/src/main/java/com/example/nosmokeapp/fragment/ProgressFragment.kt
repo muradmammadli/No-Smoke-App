@@ -38,11 +38,23 @@ class ProgressFragment : Fragment() {
         val days = TimeUnit.MILLISECONDS.toDays(diffTime)
         val hours = TimeUnit.MILLISECONDS.toHours(diffTime)
         val price = repository.getPackPricePreference()
-        Log.d("price", "$price")
         val totalPrice = days * price
+        val dailyCigars = repository.getCigaCountPreference()
+        val totalCigars = days * dailyCigars
+        val timeSpend = totalCigars * 11
+        val spendHours = timeSpend / 60
+        val spendMinute = timeSpend % 60
+
+        Log.d("price", "$price")
+        Log.d("total_price", "$totalPrice")
+
         binding.apply {
             freeCigarHours.text = "$hours saat"
             priceTxt.text = "${totalPrice} AZN"
+            spendTime.text = "$spendHours saat $spendMinute dəq"
+            binding.totalCigars.text = "$totalCigars"
+            binding.totalCigarsTxt.isSelected = true
+            progressDay.text = "Gün ${days+1}"
             if (days < 7) {
                 dayProgressBar.progress = 0
                 progressAmount.text = "0 %"
@@ -53,6 +65,4 @@ class ProgressFragment : Fragment() {
             }
         }
     }
-
-
 }

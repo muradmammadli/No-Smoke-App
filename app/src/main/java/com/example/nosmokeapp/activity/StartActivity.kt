@@ -27,6 +27,7 @@ class StartActivity : AppCompatActivity() {
         setContentView(binding.root)
         onClickFabBtn()
         createDialog()
+        addRemoveOperation()
     }
 
     private fun createDialog() {
@@ -69,73 +70,68 @@ class StartActivity : AppCompatActivity() {
         }
     }
 
-    private fun setDayCigar() {
+    private fun addRemoveOperation() {
         var dayCiga = binding.cigaDayEditText.text.toString().toInt()
-        if (dayCiga != 0){
-            viewModel.setCigaCountPref(dayCiga)
-        }
+        var packCiga = binding.cigaPackEditText.text.toString().toInt()
+        var yearCiga = binding.cigaYearEditText.text.toString().toInt()
+
         binding.apply {
-            cigaDayEditText.setText(dayCiga.toString())
             imgAdd.setOnClickListener {
                 dayCiga++
-                viewModel.setCigaCountPref(dayCiga)
                 cigaDayEditText.setText(dayCiga.toString())
             }
             imgRemove.setOnClickListener {
                 dayCiga--
-                viewModel.setCigaCountPref(dayCiga)
                 cigaDayEditText.setText(dayCiga.toString())
             }
-        }
 
-    }
-
-    private fun setPackCigar() {
-        var packCiga = binding.cigaPackEditText.text.toString().toInt()
-        if (packCiga != 0){viewModel.setPackCigaCountPref(packCiga)}
-
-        binding.apply {
-            cigaPackEditText.setText(packCiga.toString())
             imgAddPack.setOnClickListener {
                 packCiga++
-                viewModel.setPackCigaCountPref(packCiga)
                 cigaPackEditText.setText(packCiga.toString())
             }
             imgRemovePack.setOnClickListener {
                 packCiga--
-                viewModel.setPackCigaCountPref(packCiga)
                 cigaPackEditText.setText(packCiga.toString())
             }
-        }
-
-    }
-
-    private fun setYearCigar() {
-        var yearCiga = binding.cigaYearEditText.text.toString().toInt()
-        if (yearCiga != 0){
-            viewModel.setTimePref(yearCiga)
-        }
-        binding.apply {
             cigaYearEditText.setText(yearCiga.toString())
             imgAddYear.setOnClickListener {
                 yearCiga++
-                viewModel.setTimePref(yearCiga)
                 cigaYearEditText.setText(yearCiga.toString())
             }
             imgRemoveYear.setOnClickListener {
                 yearCiga--
-                viewModel.setTimePref(yearCiga)
                 cigaYearEditText.setText(yearCiga.toString())
             }
+
         }
     }
 
-    private fun setPackPrice(){
+    private fun setDayCigar() {
+        var dayCiga = binding.cigaDayEditText.text.toString().toInt()
+        if (dayCiga != 0) {
+            viewModel.setCigaCountPref(dayCiga)
+        }
+    }
+
+    private fun setPackCigar() {
+        var packCiga = binding.cigaPackEditText.text.toString().toInt()
+        if (packCiga != 0) {
+            viewModel.setPackCigaCountPref(packCiga)
+        }
+    }
+
+    private fun setYearCigar() {
+        var yearCiga = binding.cigaYearEditText.text.toString().toInt()
+        if (yearCiga != 0) {
+            viewModel.setTimePref(yearCiga)
+        }
+    }
+
+    private fun setPackPrice() {
         var pricePack = binding.cigaPriceEditText.text.toString().toDouble()
-        if (pricePack != 0.0){
+        if (pricePack != 0.0) {
             viewModel.setPackPricePref(pricePack)
         }
-
     }
 
 
